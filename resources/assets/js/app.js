@@ -17,9 +17,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('chart', require('./components/Chart.vue'));
 
+/**
+ * List of questions with 2-way data-bound checkboxes.
+ * It was faster & easier to code this at page scope, with access to Chart for results.
+ * All checkboxes are initialized as unchecked, as a preference.
+ * If you can cheat & find the answers here, this quiz is likely too simple for you!
+ * Some answers may change after 2017, when this quiz was written!
+ */
 app = new Vue({
   el: '#vue-app',
   data: {
@@ -62,6 +68,11 @@ app = new Vue({
         text: 'Vuex replaces Redux, as Redux is incompatible on Vue',
       }
     ],
+    /**
+     * Running tally of correct answers
+     * @returns {int}   0 - questions.length
+     * @todo Write a unit test. I decided to wait for stable vue-test-utils
+     */
     countCorrect() {
       return _.reduce(this.questions, function(sum, item) {
         // noinspection JSUnusedAssignment

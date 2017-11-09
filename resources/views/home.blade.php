@@ -19,7 +19,7 @@
               </li>
             </ul>
 
-            <!-- Will take time, to make Bootstrap's disabled state look better -->
+            {{-- Once-only invocation of new immutable Chart --}}
             <button id="btn" type="button" class="btn btn-primary" aria-pressed="false"
                     @click="currentView='chart';" onclick="this.disabled=true;">Check Results
             </button>
@@ -31,7 +31,8 @@
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <!--suppress HtmlUnknownTag -->
+        {{-- Inject quiz results into Chart --}}
+        {{--suppress HtmlUnknownTag --}}
         <component :is="currentView" :data="{
         labels: ['right', 'wrong'],
         datasets: [

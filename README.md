@@ -1,10 +1,10 @@
-# Summary
-Light quiz with login page
+# Vue.js Quiz
+Simple quiz on Vue.js with login page
 
 ## Requirements
 * MySQL 5.6 or MariaDB 10 (tested on MariaDB)
 * PHP 7 (tested on 7.2)
-* Yarn 1.3 (NPM install NOT recommended)
+* Yarn 1.3 (NPM install of Yarn currently NOT recommended)
 
 ## Installation
 Git clone this project, and cd into the created directory
@@ -32,6 +32,10 @@ JavaScript style is inspired by AirBnB standard
 * eslint resources/**/*.js
 * jshint resources/**/*.js
 * gjslint resources/**/*.js
+* _sudo_ npm install -g nsp
+* nsp check
+Currently, webpack-notifier has an exploit, that fortunately is not available
+at runtime.
 
 ### PHP Tests
 * composer validate
