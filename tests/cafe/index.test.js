@@ -14,5 +14,5 @@ test('Body > Div contains "Login"', async testController => { // jshint ignore:l
 
   // Assert that the inner text of the paragraph is "Hello World!"
   await testController.expect(paragraphSelector.innerText)    // jshint ignore:line
-    .eql('LOGIN REGISTER\nLaravel\nDOCUMENTATION LARACASTS NEWS FORGE GITHUB\n');
+    .eql('LOGIN REGISTER\nLogin as guest, top right to see quiz\nDOCUMENTATION LARACASTS NEWS FORGE GITHUB');
 });

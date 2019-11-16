@@ -1,6 +1,11 @@
 # Vue.js Quiz
 Simple quiz on Vue.js with login page
 
+## Notice
+Version 1 worked in 2017, but has been impacted by disruption and limited
+maintenance of Laravel Mix.
+I'll revisit project maintenance, should Laravel adopt Parcel for stability.
+
 ## Requirements
 * MySQL 5.6 or MariaDB 10 (tested on MariaDB)
 * PHP 7 (tested on 7.2)
@@ -14,11 +19,17 @@ Git clone this project, and cd into the created directory
 * composer install
 * php artisan migrate
 * php artisan db:seed
-* php artisan vendor:publish
+* optional: php artisan vendor:publish
   * optional: artisan ide-helper:*
 * yarn
 * yarn run development
 * php artisan make:auth
+* php artisan key:generate
+* mkdir -p storage/app
+* mkdir -p storage/framework/cache
+* mkdir storage/framework/sessions
+* mkdir storage/framework/views
+* chmod -R 777 framework
 * php artisan serve
 * open browser - http://localhost:8000/ (from previous step)
 
@@ -28,14 +39,11 @@ You'll need zsh for **/* recursive wildcards, else use an alternate syntax.
 ### JavaScript Tests
 JavaScript style is inspired by AirBnB standard
 * yarn check
+* yarn audit
 * jscs resources/**/*.js
 * eslint resources/**/*.js
 * jshint resources/**/*.js
 * gjslint resources/**/*.js
-* _sudo_ npm install -g nsp
-* nsp check
-Currently, webpack-notifier has an exploit, that fortunately is not available
-at runtime.
 
 ### PHP Tests
 * composer validate
